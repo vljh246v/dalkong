@@ -26,7 +26,7 @@ export default function CategoryTabs({
                 : "bg-card border border-border text-muted"
             }`}
           >
-            {meta.emoji} {meta.label}
+            {meta.label}
           </button>
         );
       })}
