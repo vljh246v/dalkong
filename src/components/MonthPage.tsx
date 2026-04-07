@@ -14,6 +14,7 @@ import GuideCard from "./GuideCard";
 import FormulaCalculator from "./FormulaCalculator";
 import ShareButton from "./ShareButton";
 import NextMonthPreview from "./NextMonthPreview";
+import AdBanner from "./AdBanner";
 
 export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
   const [activeCategory, setActiveCategory] = useState<Category>("feeding");
@@ -55,6 +56,10 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
         <section className="mt-6">
           <FormulaCalculator />
         </section>
+      )}
+
+      {process.env.NEXT_PUBLIC_ADSENSE_ID && (
+        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT || ""} />
       )}
 
       <section className="mt-6">
