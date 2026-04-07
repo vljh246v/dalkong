@@ -8,7 +8,7 @@ export default function GuideCard({ guide }: { guide: Guide }) {
 
   return (
     <div
-      className="bg-card border border-border rounded-lg p-4 cursor-pointer"
+      className="bg-card border border-border rounded-lg p-4 cursor-pointer active:bg-accent-light transition-colors"
       onClick={() => setOpen(!open)}
     >
       <div className="flex justify-between items-start gap-2">
@@ -16,8 +16,8 @@ export default function GuideCard({ guide }: { guide: Guide }) {
           <h3 className="font-semibold text-base">{guide.title}</h3>
           <p className="text-sm text-muted mt-1">{guide.summary}</p>
         </div>
-        <span className="text-muted text-sm shrink-0 mt-1">
-          {open ? "▲" : "▼"}
+        <span className="text-accent text-base shrink-0 mt-0.5 font-bold">
+          {open ? "−" : "+"}
         </span>
       </div>
 
