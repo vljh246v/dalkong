@@ -19,7 +19,17 @@
       "WebFetch(domain:health.kdca.go.kr)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Read(//private/tmp/**)",
+      "Bash(npx create-next-app@latest dalkong-scaffold --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Bash(cp /tmp/dalkong-scaffold/package.json /Users/jaehyeon/Documents/workspace/dalkong/)",
+      "Bash(cp /tmp/dalkong-scaffold/tsconfig.json /Users/jaehyeon/Documents/workspace/dalkong/)",
+      "Bash(cp /tmp/dalkong-scaffold/next.config.ts /Users/jaehyeon/Documents/workspace/dalkong/)",
+      "Bash(cp /tmp/dalkong-scaffold/postcss.config.mjs /Users/jaehyeon/Documents/workspace/dalkong/)",
+      "Bash(cp /tmp/dalkong-scaffold/eslint.config.mjs /Users/jaehyeon/Documents/workspace/dalkong/)",
+      "Bash(npm run:*)",
+      "Bash(open:*)"
     ]
   }
 }
