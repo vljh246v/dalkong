@@ -29,7 +29,12 @@
       "Bash(cp /tmp/dalkong-scaffold/postcss.config.mjs /Users/jaehyeon/Documents/workspace/dalkong/)",
       "Bash(cp /tmp/dalkong-scaffold/eslint.config.mjs /Users/jaehyeon/Documents/workspace/dalkong/)",
       "Bash(npm run:*)",
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(npx vercel:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }
