@@ -27,7 +27,7 @@ export default function NextMonthPreview({
 
   return (
     <Link href={`/${nextBucket.slug}`}>
-      <div className="bg-card border border-border rounded-lg p-4">
+      <div className="bg-card border border-border rounded-lg p-4 active:bg-accent-light transition-colors">
         <h3 className="text-sm font-semibold text-muted mb-2">
           다음 달에는...
         </h3>
