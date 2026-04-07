@@ -80,6 +80,12 @@ export default function HomePage() {
           가이드 보기
         </button>
       </form>
+
+      <p className="mt-12 text-xs text-muted text-center">
+        대한소아과학회 · WHO · childcare.go.kr 기준
+        <br />
+        72개 항목, 출처 포함
+      </p>
     </div>
   );
 }
