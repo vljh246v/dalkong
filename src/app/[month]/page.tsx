@@ -8,7 +8,7 @@ import {
 import MonthPage from "@/components/MonthPage";
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dalkong.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dalkong-one.vercel.app";
 
 type Params = Promise<{ month: string }>;
 
