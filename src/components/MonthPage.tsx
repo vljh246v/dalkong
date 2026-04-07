@@ -58,9 +58,7 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
         </section>
       )}
 
-      {process.env.NEXT_PUBLIC_ADSENSE_ID && (
-        <AdBanner slot={process.env.NEXT_PUBLIC_AD_SLOT || ""} />
-      )}
+      <AdBanner slot="auto" />
 
       <section className="mt-6">
         <ShareButton

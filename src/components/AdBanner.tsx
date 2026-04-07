@@ -26,7 +26,7 @@ export default function AdBanner({ slot }: { slot: string }) {
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
-        data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_ID || ""}
+        data-ad-client="ca-pub-9364520099576698"
         data-ad-slot={slot}
         data-ad-format="auto"
         data-full-width-responsive="true"
