@@ -11,13 +11,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const staticPages = ["/about", "/disclaimer", "/privacy", "/terms"].map(
+    (path) => ({
+      url: `${BASE_URL}${path}`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    })
+  );
+
   return [
     {
       url: BASE_URL,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 1.0,
     },
     ...monthPages,
+    ...staticPages,
   ];
 }

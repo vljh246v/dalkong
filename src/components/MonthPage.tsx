@@ -8,6 +8,7 @@ import {
   type MonthBucket,
   type Category,
 } from "@/lib/guides";
+import Link from "next/link";
 import MonthNav from "./MonthNav";
 import CategoryTabs from "./CategoryTabs";
 import GuideCard from "./GuideCard";
@@ -58,7 +59,7 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
         </section>
       )}
 
-      <AdBanner slot="auto" />
+      <AdBanner slot="9987313069" />
 
       <section className="mt-6">
         <ShareButton
@@ -72,10 +73,16 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
         <NextMonthPreview currentBucket={bucket} />
       </section>
 
-      <footer className="mt-8 pt-4 border-t border-border text-center">
+      <footer className="mt-8 pt-4 border-t border-border text-center space-y-3">
         <p className="text-xs text-muted">
           이 정보는 의료 조언이 아닙니다. 아기의 건강에 대한 결정은 소아과 전문의와 상담하세요.
         </p>
+        <nav className="flex flex-wrap gap-4 text-xs text-muted justify-center">
+          <Link href="/about" className="hover:text-accent">달콩 소개</Link>
+          <Link href="/disclaimer" className="hover:text-accent">의료 면책 고지</Link>
+          <Link href="/privacy" className="hover:text-accent">개인정보처리방침</Link>
+          <Link href="/terms" className="hover:text-accent">이용약관</Link>
+        </nav>
       </footer>
     </div>
   );

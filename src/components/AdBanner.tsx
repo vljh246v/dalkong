@@ -10,8 +10,10 @@ declare global {
 
 export default function AdBanner({ slot }: { slot: string }) {
   const pushed = useRef(false);
+  const isValidSlot = /^\d+$/.test(slot);
 
   useEffect(() => {
+    if (!isValidSlot) return;
     if (pushed.current) return;
     pushed.current = true;
     try {
@@ -19,7 +21,9 @@ export default function AdBanner({ slot }: { slot: string }) {
     } catch {
       // AdSense not loaded (blocked by adblocker, etc.)
     }
-  }, []);
+  }, [isValidSlot]);
+
+  if (!isValidSlot) return null;
 
   return (
     <div className="my-4">
