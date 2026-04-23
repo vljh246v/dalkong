@@ -7,19 +7,11 @@ import { getBucketFromBirthdate } from "@/lib/guides";
 export default function BirthdateForm() {
   const router = useRouter();
   const [birthdate, setBirthdate] = useState("");
-  const [checking, setChecking] = useState(true);
 
   useEffect(() => {
     const saved = localStorage.getItem("dalkong-birthdate");
-    if (saved) {
-      const bucket = getBucketFromBirthdate(new Date(saved));
-      if (bucket) {
-        router.replace(`/${bucket.slug}`);
-        return;
-      }
-    }
-    setChecking(false);
-  }, [router]);
+    if (saved) setBirthdate(saved);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,12 +34,6 @@ export default function BirthdateForm() {
     localStorage.setItem("dalkong-birthdate", birthdate);
     router.push(`/${bucket.slug}`);
   };
-
-  if (checking) {
-    return (
-      <div className="w-full max-w-xs mx-auto h-[140px]" aria-hidden="true" />
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-xs mx-auto">
