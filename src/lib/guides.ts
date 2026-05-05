@@ -21,6 +21,23 @@ export interface MonthBucket {
   dayMax: number;
 }
 
+export interface CareScheduleItem {
+  title: string;
+  detail: string;
+  sourceName: string;
+  sourceUrl: string;
+}
+
+export interface CareWarningItem {
+  text: string;
+  urgency: "now" | "soon";
+}
+
+export interface MonthCareInfo {
+  schedules: CareScheduleItem[];
+  warnings: CareWarningItem[];
+}
+
 export const MONTH_BUCKETS: MonthBucket[] = [
   { slug: "newborn", label: "신생아", dayMin: 0, dayMax: 30 },
   { slug: "2months", label: "2개월", dayMin: 31, dayMax: 60 },
@@ -38,6 +55,153 @@ export const CATEGORY_META: Record<
   development: { label: "발달", emoji: "💪" },
   cognitive: { label: "인지", emoji: "🧠" },
   action: { label: "놀이", emoji: "🎈" },
+};
+
+const VACCINE_SOURCE = {
+  sourceName: "질병관리청 예방접종도우미",
+  sourceUrl: "https://nip.kdca.go.kr/irhp/infm/goVcntInfo.do?menuCd=115&menuLv=1",
+};
+
+const HEALTH_CHECKUP_SOURCE = {
+  sourceName: "국민건강보험공단",
+  sourceUrl: "https://www.nhis.or.kr/static/alim/paper/oldpaper/202211/sub/11.html",
+};
+
+const FEVER_WARNING_SOURCE = {
+  sourceName: "MSD 매뉴얼",
+  sourceUrl:
+    "https://www.msdmanuals.com/ko/home/%EC%95%84%EB%8F%99%EC%9D%98-%EA%B1%B4%EA%B0%95-%EB%AC%B8%EC%A0%9C/%EC%98%81%EC%95%84-%EB%B0%8F-%EC%86%8C%EC%95%84%EC%9D%98-%EC%A6%9D%EC%83%81/%EC%98%81%EC%95%84-%EB%B0%8F-%EC%86%8C%EC%95%84%EC%9D%98-%EC%97%B4",
+};
+
+const RESPIRATORY_WARNING_SOURCE = {
+  sourceName: "CDC 호흡기 응급 신호",
+  sourceUrl: "https://www.cdc.gov/respiratory-viruses/about/index.html",
+};
+
+const DEHYDRATION_WARNING_SOURCE = {
+  sourceName: "CDC 영아 탈수 신호",
+  sourceUrl: "https://www.cdc.gov/dengue/treatment/dengue-infants.html",
+};
+
+const infantEmergencyWarnings: CareWarningItem[] = [
+  { text: "호흡이 빠르거나 힘들어 보임, 갈비뼈가 숨쉴 때마다 들어감", urgency: "now" },
+  { text: "입술·얼굴·손발이 창백하거나 푸르게 보임", urgency: "now" },
+  { text: "깨우기 어렵거나, 깨어 있어도 반응이 평소보다 뚜렷하게 떨어짐", urgency: "now" },
+  { text: "경련, 의식 저하, 멈추지 않는 심한 울음", urgency: "now" },
+  { text: "소변 기저귀가 크게 줄거나 입·혀가 마름, 울 때 눈물이 거의 없음", urgency: "soon" },
+];
+
+const youngInfantFeverWarning: CareWarningItem = {
+  text: "생후 3개월 미만에서 직장 체온 기준 38.0°C 이상 발열",
+  urgency: "now",
+};
+
+const olderInfantFeverWarning: CareWarningItem = {
+  text: "39.0°C 이상 발열, 아파 보임, 발열이 1~2일 이상 지속됨",
+  urgency: "soon",
+};
+
+export const WARNING_SOURCES = [
+  FEVER_WARNING_SOURCE,
+  RESPIRATORY_WARNING_SOURCE,
+  DEHYDRATION_WARNING_SOURCE,
+];
+
+export const MONTH_CARE_INFO: Record<string, MonthCareInfo> = {
+  newborn: {
+    schedules: [
+      {
+        title: "B형간염 1차",
+        detail: "출생 시 가능한 24시간 이내 접종합니다.",
+        ...VACCINE_SOURCE,
+      },
+      {
+        title: "BCG",
+        detail: "금기사항이 없는 신생아는 생후 4주 이내 접종 대상입니다.",
+        sourceName: "질병관리청 예방접종도우미",
+        sourceUrl:
+          "https://nip.kdca.go.kr/irhp/infm/goVcntInfo.do?menuCd=1101&menuLv=1",
+      },
+      {
+        title: "영유아 건강검진 1차",
+        detail: "생후 14~35일에 문진·진찰, 신체계측, 건강교육을 받습니다.",
+        ...HEALTH_CHECKUP_SOURCE,
+      },
+    ],
+    warnings: [youngInfantFeverWarning, ...infantEmergencyWarnings],
+  },
+  "2months": {
+    schedules: [
+      {
+        title: "2개월 예방접종",
+        detail: "DTaP, IPV, Hib, 폐렴구균, 로타바이러스 1차 접종 시기입니다.",
+        ...VACCINE_SOURCE,
+      },
+      {
+        title: "B형간염 후속 접종 확인",
+        detail: "단독백신은 생후 1개월, 혼합백신 일정은 의료기관 안내에 따릅니다.",
+        sourceName: "질병관리청 예방접종도우미",
+        sourceUrl:
+          "https://nip.kdca.go.kr/irhp/infm/goVcntInfo.do?menuCd=1102&menuLv=1",
+      },
+    ],
+    warnings: [youngInfantFeverWarning, ...infantEmergencyWarnings],
+  },
+  "3months": {
+    schedules: [
+      {
+        title: "다음 접종 일정 확인",
+        detail: "표준 일정상 4개월 접종 전 구간입니다. 지연 접종이 있으면 의료기관에 일정을 확인하세요.",
+        ...VACCINE_SOURCE,
+      },
+    ],
+    warnings: [youngInfantFeverWarning, ...infantEmergencyWarnings],
+  },
+  "4months": {
+    schedules: [
+      {
+        title: "4개월 예방접종",
+        detail: "DTaP, IPV, Hib, 폐렴구균, 로타바이러스 2차 접종 시기입니다.",
+        ...VACCINE_SOURCE,
+      },
+      {
+        title: "영유아 건강검진 2차 시작",
+        detail: "생후 4~6개월 건강검진 기간입니다.",
+        ...HEALTH_CHECKUP_SOURCE,
+      },
+    ],
+    warnings: [olderInfantFeverWarning, ...infantEmergencyWarnings],
+  },
+  "5months": {
+    schedules: [
+      {
+        title: "영유아 건강검진 2차",
+        detail: "생후 4~6개월 검진 기간 안에 예약·방문하세요.",
+        ...HEALTH_CHECKUP_SOURCE,
+      },
+      {
+        title: "지연 접종 확인",
+        detail: "4개월 접종을 놓쳤다면 예방접종수첩과 의료기관에서 보완 일정을 확인하세요.",
+        ...VACCINE_SOURCE,
+      },
+    ],
+    warnings: [olderInfantFeverWarning, ...infantEmergencyWarnings],
+  },
+  "6months": {
+    schedules: [
+      {
+        title: "6개월 예방접종",
+        detail: "DTaP, IPV, Hib, 폐렴구균 3차와 B형간염 후속 접종 시기입니다. 로타텍은 3차 접종이 있습니다.",
+        ...VACCINE_SOURCE,
+      },
+      {
+        title: "영유아 건강검진 2차 마감",
+        detail: "생후 4~6개월 검진 기간이 끝나기 전 확인하세요.",
+        ...HEALTH_CHECKUP_SOURCE,
+      },
+    ],
+    warnings: [olderInfantFeverWarning, ...infantEmergencyWarnings],
+  },
 };
 
 const guides = guidesData as Guide[];

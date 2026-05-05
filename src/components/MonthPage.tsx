@@ -13,6 +13,7 @@ import FormulaCalculator from "./FormulaCalculator";
 import ShareButton from "./ShareButton";
 import NextMonthPreview from "./NextMonthPreview";
 import AdBanner from "./AdBanner";
+import CareInfoSection from "./CareInfoSection";
 
 const CATEGORIES = ["feeding", "development", "cognitive", "action"] as const;
 
@@ -55,6 +56,8 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
           );
         })}
       </nav>
+
+      <CareInfoSection bucket={bucket} />
 
       {CATEGORIES.map((category) => {
         const meta = CATEGORY_META[category];
