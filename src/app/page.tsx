@@ -46,36 +46,54 @@ const FAQ = [
 
 export default function HomePage() {
   return (
-    <div className="max-w-lg mx-auto px-4 py-10">
-      <header className="text-center mb-8">
-        <h1 className="text-3xl font-bold">달콩</h1>
-        <p className="text-muted mt-2 text-base">
-          아기 생년월일만 입력하면,
-          <br />
-          월령별 육아 가이드를 바로 보여드려요.
-        </p>
-        <p className="text-xs text-muted mt-1">
-          출처 기반 · 소아과학회 · WHO · 아이사랑 포털
-        </p>
-      </header>
+    <div className="mx-auto max-w-lg px-4 py-8 lg:max-w-6xl lg:px-6 lg:py-14">
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start lg:gap-10">
+        <header className="mb-7 text-center lg:mb-0 lg:pt-8 lg:text-left">
+          <p className="mb-2 text-xs font-semibold text-accent">
+            0~6개월 아기 월령 가이드
+          </p>
+          <h1 className="text-4xl font-bold tracking-normal lg:text-6xl">
+            달콩
+          </h1>
+          <p className="mt-3 text-base leading-relaxed text-muted lg:text-lg">
+            아기 생년월일만 입력하면,
+            <br />
+            월령별 육아 가이드를 바로 보여드려요.
+          </p>
+          <ul className="mt-5 grid grid-cols-3 gap-2 text-xs lg:max-w-md">
+            <li className="rounded-lg border border-border bg-card px-2 py-2 font-semibold">
+              72개 항목
+            </li>
+            <li className="rounded-lg border border-border bg-card px-2 py-2 font-semibold">
+              출처 링크
+            </li>
+            <li className="rounded-lg border border-border bg-card px-2 py-2 font-semibold">
+              저장 없음
+            </li>
+          </ul>
+        </header>
 
-      <section aria-label="생년월일 입력" className="mb-12">
-        <BirthdateForm />
-      </section>
+        <section
+          aria-label="생년월일 입력"
+          className="mb-12 rounded-lg border border-border bg-card px-4 py-5 shadow-sm lg:sticky lg:top-6 lg:mb-0 lg:px-5 lg:py-6"
+        >
+          <BirthdateForm />
+        </section>
+      </div>
 
-      <section className="mb-10" aria-labelledby="months-heading">
+      <section className="mb-10 lg:mt-14" aria-labelledby="months-heading">
         <h2 id="months-heading" className="text-lg font-semibold mb-3">
           월령별 가이드 바로가기
         </h2>
         <p className="text-sm text-muted mb-4">
           생년월일을 입력하지 않아도, 아래에서 해당 월령 가이드를 바로 볼 수 있어요.
         </p>
-        <ul className="grid grid-cols-2 gap-3">
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {MONTH_BUCKETS.map((b) => (
             <li key={b.slug}>
               <Link
                 href={`/${b.slug}`}
-                className="block bg-card border border-border rounded-lg p-4 active:bg-accent-light transition-colors min-h-[64px]"
+                className="block min-h-[64px] rounded-lg border border-border bg-card p-4 transition-colors active:bg-accent-light lg:hover:border-accent"
               >
                 <div className="font-semibold text-base">{b.label}</div>
                 <div className="text-xs text-muted mt-1">
@@ -91,7 +109,7 @@ export default function HomePage() {
         <h2 id="categories-heading" className="text-lg font-semibold mb-3">
           어떤 정보를 담고 있나요?
         </h2>
-        <ul className="space-y-3">
+        <ul className="space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0">
           <li className="bg-card border border-border rounded-lg p-4">
             <div className="font-semibold text-base">
               {CATEGORY_META.feeding.emoji} {CATEGORY_META.feeding.label}
@@ -139,7 +157,7 @@ export default function HomePage() {
           달콩의 모든 가이드는 다음 공신력 있는 기관의 공개 자료를 근거로 작성되며,
           각 항목마다 원본 링크를 함께 표기합니다.
         </p>
-        <ul className="space-y-3">
+        <ul className="space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0">
           {SOURCES.map((s) => (
             <li key={s.name} className="bg-card border border-border rounded-lg p-4">
               <a
@@ -160,7 +178,7 @@ export default function HomePage() {
         <h2 id="faq-heading" className="text-lg font-semibold mb-3">
           자주 묻는 질문
         </h2>
-        <ul className="space-y-3">
+        <ul className="space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0">
           {FAQ.map((item) => (
             <li
               key={item.q}

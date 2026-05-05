@@ -55,15 +55,18 @@ export default function BirthdateForm() {
         value={birthdate}
         onChange={(e) => setBirthdate(e.target.value)}
         max={new Date().toISOString().split("T")[0]}
-        className="w-full px-4 py-3 border border-border rounded-lg text-center text-lg bg-card min-h-[44px]"
+        className="w-full px-4 py-3 border border-border rounded-lg text-center text-lg bg-background min-h-[44px] focus:outline-none focus:ring-2 focus:ring-accent/30"
         required
       />
       <button
         type="submit"
-        className="w-full mt-4 py-3 bg-accent text-white rounded-lg font-semibold text-base min-h-[44px]"
+        className="w-full mt-4 py-3 bg-accent text-white rounded-lg font-semibold text-base min-h-[44px] active:opacity-90 transition-opacity"
       >
         가이드 보기
       </button>
+      <p className="mt-3 text-center text-xs text-muted leading-relaxed">
+        생년월일은 현재 기기에만 저장되고, 서버로 전송하지 않아요.
+      </p>
     </form>
   );
 }

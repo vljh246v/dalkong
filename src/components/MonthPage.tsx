@@ -26,74 +26,80 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
   const shareDescription = `${bucket.label} 아기 육아 가이드 - 수유량, 발달, 놀이방법 한눈에 확인 (출처: 소아과학회)`;
 
   return (
-    <div className="max-w-lg mx-auto px-4 pb-8">
+    <div className="mx-auto max-w-lg px-4 pb-8 lg:max-w-6xl lg:px-6">
       <MonthNav current={bucket} />
 
-      <header className="pt-2 pb-2">
-        <h1 className="text-2xl font-bold">{bucket.label} 아기 가이드</h1>
-        <p className="text-sm text-muted mt-1">
-          출처 기반 육아 레퍼런스
+      <header className="pt-2 pb-2 lg:pb-6">
+        <h1 className="text-2xl font-bold lg:text-4xl">
+          {bucket.label} 아기 가이드
+        </h1>
+        <p className="text-sm text-muted mt-1 leading-relaxed lg:text-base">
+          수유, 발달, 상담 신호를 출처와 함께 빠르게 확인하세요.
         </p>
       </header>
 
-      <nav
-        aria-label="가이드 카테고리"
-        className="grid grid-cols-4 gap-2 my-4"
-      >
-        {CATEGORIES.map((category) => {
-          const meta = CATEGORY_META[category];
-          return (
-            <a
-              key={category}
-              href={`#${category}`}
-              className="rounded-lg border border-border bg-card px-2 py-3 text-center text-xs font-semibold active:bg-accent-light"
-            >
-              <span className="block text-base" aria-hidden="true">
-                {meta.emoji}
-              </span>
-              {meta.label}
-            </a>
-          );
-        })}
-      </nav>
+      <div className="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start lg:gap-8">
+        <nav
+          aria-label="가이드 카테고리"
+          className="sticky top-0 z-10 -mx-4 grid grid-cols-4 gap-2 border-y border-border bg-background/95 px-4 py-3 backdrop-blur lg:top-4 lg:mx-0 lg:grid-cols-1 lg:rounded-lg lg:border lg:bg-card lg:p-3"
+        >
+          {CATEGORIES.map((category) => {
+            const meta = CATEGORY_META[category];
+            return (
+              <a
+                key={category}
+                href={`#${category}`}
+                className="rounded-lg border border-border bg-card px-2 py-2 text-center text-xs font-semibold active:bg-accent-light lg:flex lg:min-h-[44px] lg:items-center lg:gap-2 lg:border-transparent lg:text-left lg:text-sm lg:hover:bg-accent-light"
+              >
+                <span className="block text-base" aria-hidden="true">
+                  {meta.emoji}
+                </span>
+                {meta.label}
+              </a>
+            );
+          })}
+        </nav>
 
-      <CareInfoSection bucket={bucket} />
+        <main>
+          <CareInfoSection bucket={bucket} />
 
-      {CATEGORIES.map((category) => {
-        const meta = CATEGORY_META[category];
-        const guides = getGuidesByCategory(allGuides, category);
+          {CATEGORIES.map((category) => {
+            const meta = CATEGORY_META[category];
+            const guides = getGuidesByCategory(allGuides, category);
 
-        return (
-          <section key={category} id={category} className="mt-6 scroll-mt-4">
-            <h2 className="text-lg font-semibold mb-3">
-              {meta.emoji} {meta.label}
-            </h2>
-            <div className="space-y-3">
-              {guides.map((guide) => (
-                <GuideCard key={guide.id} guide={guide} />
-              ))}
-            </div>
+            return (
+              <section key={category} id={category} className="mt-6 scroll-mt-20">
+                <h2 className="text-lg font-semibold mb-3">
+                  {meta.emoji} {meta.label}
+                </h2>
+                <div className="grid gap-3 xl:grid-cols-2">
+                  {guides.map((guide) => (
+                    <GuideCard key={guide.id} guide={guide} />
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+
+          <section className="mt-6">
+            <FormulaCalculator />
           </section>
-        );
-      })}
 
-      <section className="mt-6">
-        <FormulaCalculator />
-      </section>
+          <AdBanner slot="9987313069" />
 
-      <AdBanner slot="9987313069" />
+          <section className="mt-6">
+            <ShareButton
+              label={`${bucket.label} 아기 육아 가이드`}
+              url={shareUrl}
+              description={shareDescription}
+            />
+          </section>
 
-      <section className="mt-6">
-        <ShareButton
-          label={`${bucket.label} 아기 육아 가이드`}
-          url={shareUrl}
-          description={shareDescription}
-        />
-      </section>
-
-      <section className="mt-6">
-        <NextMonthPreview currentBucket={bucket} />
-      </section>
+          <section className="mt-6">
+            <NextMonthPreview currentBucket={bucket} />
+          </section>
+        </main>
+      </div>
 
       <footer className="mt-8 pt-4 border-t border-border text-center space-y-3">
         <p className="text-xs text-muted">
