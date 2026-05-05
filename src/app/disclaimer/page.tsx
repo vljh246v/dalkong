@@ -32,13 +32,13 @@ export default function DisclaimerPage() {
       <section className="mb-8 space-y-4">
         <h2 className="text-lg font-semibold">정보의 성격과 한계</h2>
         <p className="text-sm leading-relaxed">
-          달콩의 가이드는 대한소아청소년과학회, 아이사랑 포털, 질병관리청, WHO 등
+          달콩의 가이드는 대한소아청소년과학회, 아이사랑 포털, 질병관리청, CDC, AAP, WHO 등
           공신력 있는 기관의 공개 자료를 바탕으로 작성된 일반적인 교육 정보입니다.
           모든 아기는 개별적인 건강 상태, 성장 속도, 환경을 가지고 있으므로,
           같은 월령이라도 정상 범위가 개인마다 다를 수 있습니다.
         </p>
         <p className="text-sm leading-relaxed">
-          달콩이 제시하는 수유량, 발달 마일스톤, 이유식 시작 시점 등의 기준은
+          달콩이 제시하는 수유량, 발달 마일스톤, 이유식 시작 시점, 수면 안전 기준은
           통계적 평균 또는 권장 범위이며, 특정 아기에게 최적화된 의료적 지침이
           아닙니다.
         </p>

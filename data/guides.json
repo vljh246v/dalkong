@@ -131,6 +131,28 @@
     "source_url": "https://www.childcare.go.kr/?menuno=288",
     "source_secondary": ""
   },
+  {
+    "id": "sleep-newborn-1",
+    "day_range": [0, 30],
+    "category": "sleep",
+    "title": "안전 수면 기본",
+    "summary": "낮잠·밤잠 모두 등을 대고, 단단하고 평평한 잠자리",
+    "detail": "생후 1년 미만 아기는 잘 때마다 등을 대고 눕힙니다. 잠자리는 단단하고 평평해야 하며, 베개·쿠션·인형·느슨한 이불은 두지 않습니다. 부모와 같은 방에서 자되, 아기 침대나 요는 따로 쓰는 것이 안전합니다.",
+    "source_name": "질병관리청 국가건강정보포털",
+    "source_url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5467",
+    "source_secondary": "CDC Safe Sleep"
+  },
+  {
+    "id": "sleep-newborn-2",
+    "day_range": [0, 30],
+    "category": "sleep",
+    "title": "신생아 수면 범위",
+    "summary": "0~3개월 권장 수면은 하루 14~17시간, 개인차가 큼",
+    "detail": "신생아는 낮과 밤의 리듬이 아직 안정되지 않아 짧게 자고 깨는 패턴이 흔합니다. 하루 총수면은 0~3개월 기준 14~17시간이 권장 범위입니다. 권장 범위를 크게 벗어나거나 먹는 양, 기저귀, 활력이 함께 걱정되면 소아과에 상담하세요.",
+    "source_name": "CDC Sleep",
+    "source_url": "https://www.cdc.gov/sleep/about/index.html",
+    "source_secondary": "NICHD"
+  },
 
   {
     "id": "feeding-2m-1",
@@ -263,6 +285,28 @@
     "source_name": "아이사랑 포털 (childcare.go.kr)",
     "source_url": "https://www.childcare.go.kr/?menuno=289",
     "source_secondary": ""
+  },
+  {
+    "id": "sleep-2m-1",
+    "day_range": [31, 60],
+    "category": "sleep",
+    "title": "2개월 안전 수면",
+    "summary": "등으로 눕히기, 침구 비우기, 과열 피하기",
+    "detail": "낮잠과 밤잠 모두 등을 대고 눕히고, 단단하고 평평한 잠자리만 사용합니다. 베개, 인형, 범퍼, 느슨한 이불은 빼고, 땀을 많이 흘리거나 가슴이 뜨거울 정도로 덥게 입히지 마세요.",
+    "source_name": "CDC Safe Sleep",
+    "source_url": "https://www.cdc.gov/sudden-infant-death/sleep-safely/index.html",
+    "source_secondary": "질병관리청 국가건강정보포털"
+  },
+  {
+    "id": "sleep-2m-2",
+    "day_range": [31, 60],
+    "category": "sleep",
+    "title": "2개월 수면 리듬",
+    "summary": "0~3개월 권장 수면은 하루 14~17시간",
+    "detail": "2개월은 아직 수면이 여러 번 나뉘는 시기입니다. 하루 총수면은 0~3개월 권장 범위인 14~17시간을 참고하되, 아기마다 차이가 큽니다. 오래 자더라도 수유량, 젖은 기저귀, 깨어 있을 때 반응이 함께 중요합니다.",
+    "source_name": "CDC Sleep",
+    "source_url": "https://www.cdc.gov/sleep/about/index.html",
+    "source_secondary": "NICHD"
   },
 
   {
@@ -397,6 +441,28 @@
     "source_url": "https://www.childcare.go.kr/?menuno=289",
     "source_secondary": ""
   },
+  {
+    "id": "sleep-3m-1",
+    "day_range": [61, 90],
+    "category": "sleep",
+    "title": "속싸개 전환 체크",
+    "summary": "뒤집기 조짐이 보이면 속싸개는 중단",
+    "detail": "속싸개를 쓰더라도 아기는 반드시 등을 대고 재웁니다. 몸을 비틀거나 옆으로 굴러가려는 등 뒤집기 조짐이 보이면 속싸개를 중단하세요. 속싸개 상태로 엎드리면 질식 위험이 커질 수 있습니다.",
+    "source_name": "American Academy of Pediatrics",
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/swaddling-is-it-safe.aspx",
+    "source_secondary": "질병관리청 국가건강정보포털"
+  },
+  {
+    "id": "sleep-3m-2",
+    "day_range": [61, 90],
+    "category": "sleep",
+    "title": "3개월 수면 범위",
+    "summary": "0~3개월 권장 수면은 하루 14~17시간",
+    "detail": "3개월까지는 하루 총수면 14~17시간을 기준으로 보되, 낮잠과 밤잠 분포는 아기마다 다릅니다. 잠들기 전 조용한 환경, 비슷한 순서의 목욕·수유·자장가 루틴은 수면 신호를 만드는 데 도움이 됩니다.",
+    "source_name": "CDC Sleep",
+    "source_url": "https://www.cdc.gov/sleep/about/index.html",
+    "source_secondary": "American Academy of Pediatrics"
+  },
 
   {
     "id": "feeding-4m-1",
@@ -529,6 +595,28 @@
     "source_name": "아이사랑 포털 (childcare.go.kr)",
     "source_url": "https://www.childcare.go.kr/?menuno=440",
     "source_secondary": ""
+  },
+  {
+    "id": "sleep-4m-1",
+    "day_range": [91, 120],
+    "category": "sleep",
+    "title": "4개월 수면 범위",
+    "summary": "4~12개월 권장 수면은 낮잠 포함 하루 12~16시간",
+    "detail": "4개월부터 12개월까지는 낮잠을 포함해 하루 12~16시간 수면이 권장됩니다. 이 범위는 평균적인 기준이므로, 아기의 컨디션과 성장 추세를 함께 보세요. 수면 문제가 반복되거나 수유·활력에 영향이 있으면 상담이 필요합니다.",
+    "source_name": "CDC Sleep",
+    "source_url": "https://www.cdc.gov/sleep/about/index.html",
+    "source_secondary": "American Academy of Sleep Medicine"
+  },
+  {
+    "id": "sleep-4m-2",
+    "day_range": [91, 120],
+    "category": "sleep",
+    "title": "방은 같이, 잠자리는 따로",
+    "summary": "최소 6개월은 같은 방에서 따로 재우기",
+    "detail": "아기 잠자리는 부모 방 안에 두되, 성인 침대·소파·의자가 아닌 아기 전용 침대나 요를 사용합니다. CDC와 AAP는 적어도 생후 6개월까지 같은 방에서 별도 수면 공간을 쓰도록 권고합니다.",
+    "source_name": "CDC Safe Sleep",
+    "source_url": "https://www.cdc.gov/sudden-infant-death/sleep-safely/index.html",
+    "source_secondary": "질병관리청 국가건강정보포털"
   },
 
   {
@@ -663,6 +751,28 @@
     "source_url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5470",
     "source_secondary": ""
   },
+  {
+    "id": "sleep-5m-1",
+    "day_range": [121, 150],
+    "category": "sleep",
+    "title": "뒤집기 이후 수면 안전",
+    "summary": "속싸개는 중단하고, 잠자리는 더 비워두기",
+    "detail": "뒤집기 조짐이 있거나 이미 뒤집는다면 속싸개는 중단합니다. 잠자리에 베개, 쿠션, 인형, 느슨한 이불을 두지 말고, 잠들 때는 계속 등을 대고 눕힙니다. 아기가 스스로 자세를 바꾸는 경우에도 수면 공간은 비워두는 것이 핵심입니다.",
+    "source_name": "American Academy of Pediatrics",
+    "source_url": "https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/swaddling-is-it-safe.aspx",
+    "source_secondary": "CDC Safe Sleep"
+  },
+  {
+    "id": "sleep-5m-2",
+    "day_range": [121, 150],
+    "category": "sleep",
+    "title": "과열 피하기",
+    "summary": "두꺼운 이불보다 옷·수면조끼로 조절",
+    "detail": "아기를 따뜻하게 하려고 이불을 덮기보다 계절에 맞는 옷이나 수면조끼를 사용하세요. 머리에 모자를 씌운 채 재우지 말고, 땀이나 뜨거운 가슴처럼 과열 신호가 있으면 옷차림과 실내 온도를 조절합니다.",
+    "source_name": "질병관리청 국가건강정보포털",
+    "source_url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5467",
+    "source_secondary": "CDC Safe Sleep"
+  },
 
   {
     "id": "feeding-6m-1",
@@ -795,5 +905,27 @@
     "source_name": "비행테라스 (baby.tali.kr)",
     "source_url": "https://baby.tali.kr/baby-6-month-development",
     "source_secondary": ""
+  },
+  {
+    "id": "sleep-6m-1",
+    "day_range": [151, 180],
+    "category": "sleep",
+    "title": "6개월 수면 범위",
+    "summary": "낮잠 포함 하루 12~16시간 권장",
+    "detail": "4~12개월 아기는 낮잠을 포함해 하루 12~16시간 수면이 권장됩니다. 6개월 무렵에는 낮잠과 밤잠의 패턴이 조금씩 안정될 수 있지만 개인차가 큽니다. 반복적인 수면 문제나 심한 코골이, 수유·성장 문제가 함께 있으면 상담하세요.",
+    "source_name": "CDC Sleep",
+    "source_url": "https://www.cdc.gov/sleep/about/index.html",
+    "source_secondary": "NICHD"
+  },
+  {
+    "id": "sleep-6m-2",
+    "day_range": [151, 180],
+    "category": "sleep",
+    "title": "방 공유 점검",
+    "summary": "같은 방에서 따로 재우는 원칙을 다시 확인",
+    "detail": "최소 6개월까지는 부모와 같은 방에서, 아기 전용 침대나 요에 따로 재우는 것이 권장됩니다. 성인 침대, 소파, 의자, 쿠션 많은 공간은 피하고, 수면 공간에는 딱 맞는 시트 외 물건을 두지 않습니다.",
+    "source_name": "CDC Safe Sleep",
+    "source_url": "https://www.cdc.gov/sudden-infant-death/sleep-safely/index.html",
+    "source_secondary": "질병관리청 국가건강정보포털"
   }
 ]

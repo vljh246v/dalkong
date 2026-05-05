@@ -15,8 +15,18 @@ const SOURCES = [
   },
   {
     name: "질병관리청 국가건강정보포털",
-    desc: "이유식·예방접종 등 공공 의료 정보.",
+    desc: "이유식·예방접종·영아 안전 수면 등 공공 의료 정보.",
     url: "https://health.kdca.go.kr",
+  },
+  {
+    name: "CDC",
+    desc: "영아 안전 수면, 월령별 권장 수면 시간 등 공중보건 자료.",
+    url: "https://www.cdc.gov",
+  },
+  {
+    name: "American Academy of Pediatrics",
+    desc: "영아 안전 수면과 속싸개 사용 기준 등 소아과 전문 자료.",
+    url: "https://www.healthychildren.org",
   },
   {
     name: "WHO (세계보건기구)",
@@ -28,11 +38,11 @@ const SOURCES = [
 const FAQ = [
   {
     q: "달콩은 어떤 서비스인가요?",
-    a: "생후 0~6개월 아기의 월령별 수유·발달·인지·놀이 정보를 출처와 함께 한 화면에서 볼 수 있는 가이드입니다. 아기 생년월일을 입력하면 현재 월령에 맞는 정보만 보여드려요.",
+    a: "생후 0~6개월 아기의 월령별 수유·발달·인지·놀이·수면 정보를 출처와 함께 한 화면에서 볼 수 있는 가이드입니다. 아기 생년월일을 입력하면 현재 월령에 맞는 정보만 보여드려요.",
   },
   {
     q: "정보의 출처는 어디인가요?",
-    a: "모든 가이드는 대한소아청소년과학회, 아이사랑 포털, 질병관리청, WHO 등 공신력 있는 기관의 자료를 바탕으로 작성되며, 각 항목마다 원본 링크가 표기됩니다.",
+    a: "모든 가이드는 대한소아청소년과학회, 아이사랑 포털, 질병관리청, CDC, AAP, WHO 등 공신력 있는 기관의 자료를 바탕으로 작성되며, 각 항목마다 원본 링크가 표기됩니다.",
   },
   {
     q: "의료 상담을 대신할 수 있나요?",
@@ -40,7 +50,7 @@ const FAQ = [
   },
   {
     q: "왜 생후 6개월까지만 지원하나요?",
-    a: "현재 72개 항목의 월령별 가이드가 신생아~6개월 구간에 집중되어 있어, 검증된 범위만 우선 공개했습니다. 이후 12개월·24개월 범위까지 확장할 예정입니다.",
+    a: "현재 84개 항목의 월령별 가이드가 신생아~6개월 구간에 집중되어 있어, 검증된 범위만 우선 공개했습니다. 이후 12개월·24개월 범위까지 확장할 예정입니다.",
   },
 ];
 
@@ -58,11 +68,11 @@ export default function HomePage() {
           <p className="mt-3 text-base leading-relaxed text-muted lg:text-lg">
             아기 생년월일만 입력하면,
             <br />
-            월령별 육아 가이드를 바로 보여드려요.
+            수유·발달·수면 가이드를 바로 보여드려요.
           </p>
           <ul className="mt-5 grid grid-cols-3 gap-2 text-xs lg:max-w-md">
             <li className="rounded-lg border border-border bg-card px-2 py-2 font-semibold">
-              72개 항목
+              84개 항목
             </li>
             <li className="rounded-lg border border-border bg-card px-2 py-2 font-semibold">
               출처 링크
@@ -146,6 +156,15 @@ export default function HomePage() {
               함께 안내.
             </p>
           </li>
+          <li className="bg-card border border-border rounded-lg p-4 md:col-span-2">
+            <div className="font-semibold text-base">
+              {CATEGORY_META.sleep.emoji} {CATEGORY_META.sleep.label}
+            </div>
+            <p className="text-sm text-muted mt-1">
+              월령별 권장 수면 시간, 안전 수면 환경, 속싸개 중단 시점, 과열·침구
+              주의사항 등 신뢰 출처 기반 수면 가이드.
+            </p>
+          </li>
         </ul>
       </section>
 
@@ -196,7 +215,7 @@ export default function HomePage() {
           이 정보는 의료 조언이 아닙니다. 아기의 건강에 대한 결정은 반드시 소아과
           전문의와 상담하세요.
           <br />
-          대한소아청소년과학회 · WHO · childcare.go.kr 기준 · 72개 항목, 출처 포함
+          대한소아청소년과학회 · 질병관리청 · CDC 기준 · 84개 항목, 출처 포함
         </p>
         <nav className="flex flex-wrap gap-4 text-xs text-muted justify-center">
           <Link href="/about" className="hover:text-accent">달콩 소개</Link>

@@ -34,7 +34,7 @@ export async function generateMetadata({
     description: `${bucket.label} 아기의 ${categories} 정보를 출처와 함께. 소아과학회, WHO 기준.`,
     openGraph: {
       title: `${bucket.label} 아기 육아 가이드 - 달콩`,
-      description: `${bucket.label} 아기 육아 가이드 - 수유량, 발달, 놀이방법 한눈에 확인 (출처: 소아과학회)`,
+      description: `${bucket.label} 아기 육아 가이드 - 수유량, 발달, 놀이, 수면 정보를 한눈에 확인`,
     },
     alternates: {
       canonical: `${BASE_URL}/${bucket.slug}`,
@@ -48,7 +48,7 @@ function JsonLd({ bucket }: { bucket: { slug: string; label: string } }) {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: `${bucket.label} 아기 육아 가이드`,
-    description: `${bucket.label} 아기의 수유, 발달, 인지, 놀이 정보를 출처와 함께 제공합니다.`,
+    description: `${bucket.label} 아기의 수유, 발달, 인지, 놀이, 수면 정보를 출처와 함께 제공합니다.`,
     url: `${BASE_URL}/${bucket.slug}`,
     inLanguage: "ko",
     about: {

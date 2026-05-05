@@ -15,7 +15,7 @@ import NextMonthPreview from "./NextMonthPreview";
 import AdBanner from "./AdBanner";
 import CareInfoSection from "./CareInfoSection";
 
-const CATEGORIES = ["feeding", "development", "cognitive", "action"] as const;
+const CATEGORIES = ["feeding", "development", "cognitive", "action", "sleep"] as const;
 
 export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
   const allGuides = getGuidesByBucket(bucket);
@@ -23,7 +23,7 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
   const shareUrl = typeof window !== "undefined"
     ? `${window.location.origin}/${bucket.slug}`
     : `/${bucket.slug}`;
-  const shareDescription = `${bucket.label} 아기 육아 가이드 - 수유량, 발달, 놀이방법 한눈에 확인 (출처: 소아과학회)`;
+  const shareDescription = `${bucket.label} 아기 육아 가이드 - 수유량, 발달, 놀이, 수면 정보 한눈에 확인`;
 
   return (
     <div className="mx-auto max-w-lg px-4 pb-8 lg:max-w-6xl lg:px-6">
@@ -34,14 +34,14 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
           {bucket.label} 아기 가이드
         </h1>
         <p className="text-sm text-muted mt-1 leading-relaxed lg:text-base">
-          수유, 발달, 상담 신호를 출처와 함께 빠르게 확인하세요.
+          수유, 발달, 수면, 상담 신호를 출처와 함께 빠르게 확인하세요.
         </p>
       </header>
 
       <div className="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start lg:gap-8">
         <nav
           aria-label="가이드 카테고리"
-          className="sticky top-0 z-10 -mx-4 grid grid-cols-4 gap-2 border-y border-border bg-background/95 px-4 py-3 backdrop-blur lg:top-4 lg:mx-0 lg:grid-cols-1 lg:rounded-lg lg:border lg:bg-card lg:p-3"
+          className="sticky top-0 z-10 -mx-4 grid grid-cols-5 gap-2 border-y border-border bg-background/95 px-4 py-3 backdrop-blur lg:top-4 lg:mx-0 lg:grid-cols-1 lg:rounded-lg lg:border lg:bg-card lg:p-3"
         >
           {CATEGORIES.map((category) => {
             const meta = CATEGORY_META[category];

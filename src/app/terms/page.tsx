@@ -25,7 +25,7 @@ export default function TermsPage() {
         <h2 className="text-lg font-semibold">제1조 서비스 목적</h2>
         <p className="text-sm leading-relaxed">
           달콩(이하 &ldquo;서비스&rdquo;)은 생후 0~6개월 아기를 키우는 부모에게
-          월령별 수유·발달·인지·놀이에 관한 일반 정보를 제공하는 교육 목적의
+          월령별 수유·발달·인지·놀이·수면에 관한 일반 정보를 제공하는 교육 목적의
           무료 서비스입니다.
         </p>
       </section>

@@ -1,6 +1,11 @@
 import guidesData from "../../data/guides.json";
 
-export type Category = "feeding" | "development" | "cognitive" | "action";
+export type Category =
+  | "feeding"
+  | "development"
+  | "cognitive"
+  | "action"
+  | "sleep";
 
 export interface Guide {
   id: string;
@@ -55,6 +60,7 @@ export const CATEGORY_META: Record<
   development: { label: "발달", emoji: "💪" },
   cognitive: { label: "인지", emoji: "🧠" },
   action: { label: "놀이", emoji: "🎈" },
+  sleep: { label: "수면", emoji: "🌙" },
 };
 
 const VACCINE_SOURCE = {

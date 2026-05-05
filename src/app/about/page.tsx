@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "달콩 소개",
   description:
-    "달콩은 대한소아청소년과학회·WHO 등 공신력 있는 출처를 바탕으로 생후 0~6개월 아기의 월령별 수유·발달·놀이 정보를 제공하는 육아 가이드입니다.",
+    "달콩은 공신력 있는 출처를 바탕으로 생후 0~6개월 아기의 월령별 수유·발달·놀이·수면 정보를 제공하는 육아 가이드입니다.",
   alternates: { canonical: "https://dalkong-one.vercel.app/about" },
 };
 
@@ -28,12 +28,12 @@ export default function AboutPage() {
         <h2 className="text-lg font-semibold">서비스 목적</h2>
         <p className="text-sm leading-relaxed">
           달콩은 생후 0~6개월 아기를 키우는 부모가 신뢰할 수 있는 출처를 통해 수유량,
-          발달 마일스톤, 인지 발달, 월령별 놀이 방법을 한 화면에서 쉽게 확인할 수
+          발달 마일스톤, 인지 발달, 월령별 놀이 방법, 수면 안전 정보를 한 화면에서 쉽게 확인할 수
           있도록 돕는 서비스입니다.
         </p>
         <p className="text-sm leading-relaxed">
           인터넷에는 육아 정보가 넘쳐나지만, 출처가 불분명하거나 상업적 목적의 정보가
-          많습니다. 달콩은 대한소아청소년과학회·아이사랑 포털·질병관리청·WHO 등
+          많습니다. 달콩은 대한소아청소년과학회·아이사랑 포털·질병관리청·CDC·AAP·WHO 등
           공신력 있는 기관의 공개 자료만을 근거로 콘텐츠를 작성하며, 각 항목마다
           원본 링크를 함께 제공합니다.
         </p>
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <div className="font-semibold">1차 출처 우선</div>
             <p className="text-muted mt-1">
               대한소아청소년과학회, 아이사랑 포털(보건복지부), 질병관리청
-              국가건강정보포털, WHO 등 공공·학술 기관의 1차 자료를 우선합니다.
+              국가건강정보포털, CDC, AAP, WHO 등 공공·학술 기관의 1차 자료를 우선합니다.
             </p>
           </li>
           <li className="bg-card border border-border rounded-lg p-4">
@@ -82,6 +82,8 @@ export default function AboutPage() {
             { name: "질병관리청 국가건강정보포털", url: "https://health.kdca.go.kr" },
             { name: "질병관리청 예방접종도우미", url: "https://nip.kdca.go.kr" },
             { name: "국민건강보험공단 영유아검진", url: "https://www.nhis.or.kr" },
+            { name: "CDC", url: "https://www.cdc.gov" },
+            { name: "American Academy of Pediatrics", url: "https://www.healthychildren.org" },
             { name: "세계보건기구 (WHO)", url: "https://www.who.int" },
           ].map((s) => (
             <li key={s.name}>

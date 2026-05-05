@@ -2,7 +2,7 @@
 
 import { CATEGORY_META, type Category } from "@/lib/guides";
 
-const CATEGORIES: Category[] = ["feeding", "development", "cognitive", "action"];
+const CATEGORIES: Category[] = ["feeding", "development", "cognitive", "action", "sleep"];
 
 export default function CategoryTabs({
   active,
