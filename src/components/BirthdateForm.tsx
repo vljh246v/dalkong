@@ -10,7 +10,13 @@ export default function BirthdateForm() {
 
   useEffect(() => {
     const saved = localStorage.getItem("dalkong-birthdate");
-    if (saved) setBirthdate(saved);
+    if (!saved) return;
+
+    const frame = requestAnimationFrame(() => {
+      setBirthdate(saved);
+    });
+
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {

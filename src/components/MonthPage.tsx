@@ -1,28 +1,23 @@
 "use client";
 
-import { useState } from "react";
 import {
   getGuidesByBucket,
   getGuidesByCategory,
   CATEGORY_META,
   type MonthBucket,
-  type Category,
 } from "@/lib/guides";
 import Link from "next/link";
 import MonthNav from "./MonthNav";
-import CategoryTabs from "./CategoryTabs";
 import GuideCard from "./GuideCard";
 import FormulaCalculator from "./FormulaCalculator";
 import ShareButton from "./ShareButton";
 import NextMonthPreview from "./NextMonthPreview";
 import AdBanner from "./AdBanner";
 
-export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
-  const [activeCategory, setActiveCategory] = useState<Category>("feeding");
+const CATEGORIES = ["feeding", "development", "cognitive", "action"] as const;
 
+export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
   const allGuides = getGuidesByBucket(bucket);
-  const filteredGuides = getGuidesByCategory(allGuides, activeCategory);
-  const meta = CATEGORY_META[activeCategory];
 
   const shareUrl = typeof window !== "undefined"
     ? `${window.location.origin}/${bucket.slug}`
@@ -40,24 +35,48 @@ export default function MonthPage({ bucket }: { bucket: MonthBucket }) {
         </p>
       </header>
 
-      <CategoryTabs active={activeCategory} onSelect={setActiveCategory} />
+      <nav
+        aria-label="가이드 카테고리"
+        className="grid grid-cols-4 gap-2 my-4"
+      >
+        {CATEGORIES.map((category) => {
+          const meta = CATEGORY_META[category];
+          return (
+            <a
+              key={category}
+              href={`#${category}`}
+              className="rounded-lg border border-border bg-card px-2 py-3 text-center text-xs font-semibold active:bg-accent-light"
+            >
+              <span className="block text-base" aria-hidden="true">
+                {meta.emoji}
+              </span>
+              {meta.label}
+            </a>
+          );
+        })}
+      </nav>
 
-      <section className="mt-4">
-        <h2 className="text-lg font-semibold mb-3">
-          {meta.emoji} {meta.label}
-        </h2>
-        <div className="space-y-3">
-          {filteredGuides.map((guide) => (
-            <GuideCard key={guide.id} guide={guide} />
-          ))}
-        </div>
+      {CATEGORIES.map((category) => {
+        const meta = CATEGORY_META[category];
+        const guides = getGuidesByCategory(allGuides, category);
+
+        return (
+          <section key={category} id={category} className="mt-6 scroll-mt-4">
+            <h2 className="text-lg font-semibold mb-3">
+              {meta.emoji} {meta.label}
+            </h2>
+            <div className="space-y-3">
+              {guides.map((guide) => (
+                <GuideCard key={guide.id} guide={guide} />
+              ))}
+            </div>
+          </section>
+        );
+      })}
+
+      <section className="mt-6">
+        <FormulaCalculator />
       </section>
-
-      {activeCategory === "feeding" && (
-        <section className="mt-6">
-          <FormulaCalculator />
-        </section>
-      )}
 
       <AdBanner slot="9987313069" />
 
